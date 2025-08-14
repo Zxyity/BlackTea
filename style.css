@@ -1,4 +1,3 @@
-/* General */
 body {
   margin: 0;
   font-family: monospace;
@@ -12,13 +11,13 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
   text-align: left;
   width: 400px;
 }
 
 /* Hidden screens */
-.hidden { display: none; }
+.hidden { display:none; }
 
 /* Buttons */
 button {
@@ -49,36 +48,37 @@ input[type="password"], input[type="number"] {
   width: 100%;
 }
 
-/* Balances & history */
-#balances { margin: 10px 0; font-size: 1.1em; }
-#history { list-style: none; padding: 0; max-height: 150px; overflow-y: auto; margin: 10px 0; }
-#history li { border-bottom: 1px solid #0f0; padding: 2px 0; }
-
-/* Store */
-#store button { display: block; }
-
 /* Cards */
-.card { border:1px solid #0f0; padding:10px; margin:5px 0; }
+.card { border:1px solid; padding:10px; margin:5px 0; }
 .card-label { font-weight:bold; margin-bottom:5px; }
-.card-number { font-family: monospace; letter-spacing: 2px; }
+.card-number { font-family: monospace; letter-spacing:2px; }
+
+/* Balances & history */
+#balances { margin: 10px 0; font-size:1.1em; }
+#history { list-style:none; padding:0; max-height:150px; overflow-y:auto; margin:10px 0; }
+#history li { border-bottom:1px solid; padding:2px 0; }
+
+/* Store buttons */
+#store button { display:block; }
 
 /* Flash messages */
 .flash-message {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2em;
-  z-index: 9999;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  font-size:2em;
+  z-index:9999;
 }
 
-/* Matrix canvas */
+/* Matrix background */
 #matrix-bg {
-  position: fixed;
-  top:0; left:0;
-  width: 100%;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
   height:100%;
-  z-index: -1;
+  z-index:-1;
 }
 
 

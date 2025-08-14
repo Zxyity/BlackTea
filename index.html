@@ -1,81 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Black Tea</title>
-  <link rel="icon" type="image/png" href="./assets/butterfly-icon.png">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Tea</title>
+<link rel="icon" type="image/png" href="./assets/butterfly-icon.png">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Matrix Background -->
-  <canvas id="matrix-bg"></canvas>
+<!-- Matrix Background -->
+<canvas id="matrix-bg"></canvas>
 
-  <!-- Login Screen -->
-  <div id="login-screen" class="centered">
-    <h1>BLACK TEA</h1>
-    <input type="password" id="login-code" placeholder="Enter Access Code">
-    <button id="login-btn">Login</button>
-  </div>
+<!-- Login Screen -->
+<div id="login-screen" class="centered">
+  <h1>BLACK TEA</h1>
+  <input type="password" id="login-code" placeholder="Enter Access Code">
+  <button id="login-btn">Login</button>
+</div>
 
-  <!-- Home Screen -->
-  <div id="home-screen" class="hidden centered">
-    <h2>Welcome, <span id="username"></span></h2>
-    <p id="balances"></p>
+<!-- Home Screen -->
+<div id="home-screen" class="hidden centered">
+  <div id="cards"></div>
 
-    <h3>Transaction History</h3>
-    <ul id="history"></ul>
+  <h2>Welcome, <span id="username"></span></h2>
+  <p id="balances"></p>
 
-    <h3>Send Credits</h3>
-    <input type="number" id="send-amount" placeholder="Amount">
-    <button id="send-button">Send</button>
+  <h3>Transaction History</h3>
+  <ul id="history"></ul>
 
-    <h3>Store</h3>
-    <div id="store"></div>
+  <h3>Send Credits</h3>
+  <input type="number" id="send-amount" placeholder="Amount">
+  <button id="send-button">Send</button>
 
-    <h3>Cards</h3>
-    <div id="cards"></div>
+  <h3>Store</h3>
+  <div id="store"></div>
 
-    <h3>Settings</h3>
-    <select id="color-picker">
-      <option value="#0f0">Green</option>
-      <option value="#0ff">Cyan</option>
-      <option value="#f0f">Magenta</option>
-      <option value="#ff0">Yellow</option>
-      <option value="#f00">Red</option>
-      <option value="#00f">Blue</option>
-      <option value="#fff">White</option>
-    </select>
+  <h3>Settings</h3>
+  <select id="color-picker">
+    <option value="#0f0">Green</option>
+    <option value="#0ff">Cyan</option>
+    <option value="#f0f">Magenta</option>
+    <option value="#ff0">Yellow</option>
+    <option value="#f00">Red</option>
+    <option value="#00f">Blue</option>
+    <option value="#fff">White</option>
+  </select>
 
-    <button id="logout-btn">Log Out</button>
-  </div>
+  <button id="logout-btn">Log Out</button>
+</div>
 
-  <script src="script.js"></script>
-  <script>
-    // Matrix background
-    const canvas = document.getElementById('matrix-bg');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    const fontSize = 14;
-    const columns = Math.floor(canvas.width / fontSize);
-    const drops = Array.from({length: columns}).fill(1);
+<script src="script.js"></script>
+<script>
+const canvas = document.getElementById('matrix-bg');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+const fontSize = 14;
+const columns = Math.floor(canvas.width / fontSize);
+const drops = Array.from({length: columns}).fill(1);
 
-    function drawMatrix() {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = window.schemePrimary || '#0f0';
-      ctx.font = fontSize + 'px monospace';
-      for (let i = 0; i < drops.length; i++) {
-        const text = letters.charAt(Math.floor(Math.random() * letters.length));
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if(drops[i]*fontSize > canvas.height && Math.random() > 0.975) drops[i]=0;
-        drops[i]++;
-      }
-    }
-    setInterval(drawMatrix, 35);
-  </script>
+function drawMatrix() {
+  ctx.fillStyle = 'rgba(0,0,0,0.05)';
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle = window.schemePrimary || '#0f0';
+  ctx.font = fontSize + 'px monospace';
+  for(let i=0;i<drops.length;i++){
+    const text=letters.charAt(Math.floor(Math.random()*letters.length));
+    ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+    if(drops[i]*fontSize>canvas.height && Math.random()>0.975) drops[i]=0;
+    drops[i]++;
+  }
+}
+setInterval(drawMatrix,35);
+</script>
 </body>
 </html>
 
