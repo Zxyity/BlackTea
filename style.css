@@ -1,0 +1,84 @@
+/* General */
+body {
+  margin: 0;
+  font-family: monospace;
+  background: black;
+  color: #0f0;
+  overflow: hidden;
+}
+
+/* Centered content */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  width: 400px;
+}
+
+/* Hidden screens */
+.hidden { display: none; }
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  margin: 5px 0;
+  cursor: pointer;
+  border: 1px solid #0f0;
+  background: transparent;
+  color: #0f0;
+  font-weight: bold;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+button:hover {
+  background: #0f0;
+  color: black;
+}
+
+/* Inputs */
+input[type="password"], input[type="number"] {
+  padding: 10px;
+  margin: 5px 0;
+  font-size: 1em;
+  border: 1px solid #0f0;
+  background: black;
+  color: #0f0;
+  outline: none;
+  width: 100%;
+}
+
+/* Balances & history */
+#balances { margin: 10px 0; font-size: 1.1em; }
+#history { list-style: none; padding: 0; max-height: 150px; overflow-y: auto; margin: 10px 0; }
+#history li { border-bottom: 1px solid #0f0; padding: 2px 0; }
+
+/* Store */
+#store button { display: block; }
+
+/* Cards */
+.card { border:1px solid #0f0; padding:10px; margin:5px 0; }
+.card-label { font-weight:bold; margin-bottom:5px; }
+.card-number { font-family: monospace; letter-spacing: 2px; }
+
+/* Flash messages */
+.flash-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  z-index: 9999;
+}
+
+/* Matrix canvas */
+#matrix-bg {
+  position: fixed;
+  top:0; left:0;
+  width: 100%;
+  height:100%;
+  z-index: -1;
+}
+
+

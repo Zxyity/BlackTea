@@ -1,0 +1,18 @@
+{
+    "Kristén": [
+        {
+            "action": "Transfer to Joe",
+            "item": "Credits",
+            "credits": -260,
+            "date": "2025-08-14 10:00 AM"
+        }
+    ],
+    "Joe": [
+        {
+            "action": "Received from Kristén",
+            "item": "Credits",
+            "credits": 260,
+            "date": "2025-08-14 10:00 AM"
+        }
+    ]
+}
